@@ -4,7 +4,6 @@ console.log('hola');
 
 const numberEl = document.querySelector('#guess-number');
 const buttonEl = document.querySelector('#button-try');
-
 const hintEl = document.querySelector('.hint');
 const attempsEl = document.querySelector('.attemps-number');
 
@@ -32,8 +31,5 @@ function updateElements() {
         attempsEl.innerHTML = numberAttemps += 1;
     }
 }
-
-
-
 
 buttonEl.addEventListener('click', updateElements);
