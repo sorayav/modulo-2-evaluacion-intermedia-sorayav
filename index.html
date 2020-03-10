@@ -10,11 +10,12 @@
     </head>
     <body>
       <main class="main">
-      <h1>Adivina el número</h1>  
+      <h1>Adivina el número</h1>
+      <form action="" method="POST">
         <label for="guess-number">Introduce aquí tu número:</label>
-        <input type="number" name="guess-number" id="guess-number">
+        <input type="number" maxlength="100" name="guess-number" id="guess-number">
         <button class="button-try" id="button-try" type="button">Prueba</button>
-
+      </form>
         <p class="hint">Pista: Escribe el número y dale a "prueba".</p>
         <p class="attemps">Número de intentos: <span class="attemps-number">0</span></p>
       </main>

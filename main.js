@@ -21,7 +21,7 @@ function updateElements() {
         hintEl.innerHTML = `¡¡¡Has ganado, campeona!!!`;
         attempsEl.innerHTML = numberAttemps += 1;
         console.log('¡¡¡Has ganado, campeona!!!');
-    } else if (parseInt(numberEl.value) > randomNumber) {
+    } else if (parseInt(numberEl.value) > randomNumber && parseInt(numberEl.value) < 101) {
         hintEl.innerHTML = 'Demasiado alto.';
         console.log('Demasiado alto.');
         attempsEl.innerHTML = numberAttemps += 1;
@@ -29,6 +29,9 @@ function updateElements() {
         hintEl.innerHTML = 'Demasiado bajo.';
         console.log('Demasiado bajo.');
         attempsEl.innerHTML = numberAttemps += 1;
+    } else {
+        hintEl.innerHTML = 'El número debe estar entre 1 y 100.';
+        console.log('El número debe estar entre 1 y 100.');
     }
 }
 
