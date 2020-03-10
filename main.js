@@ -12,27 +12,29 @@ let numberAttemps = 0;
 
 function getRandomNumber(max) {
     return Math.ceil(Math.random() * max);
-    console.log('')
 }
 
-function updateElements() {
-    const randomNumber = getRandomNumber(100);
+const randomNumber = getRandomNumber(100);
+console.log(randomNumber);
 
+function updateElements() {
+    // event.preventDefault()
     if (numberEl.value === randomNumber) {
         hintEl.innerHTML = `¡¡¡Has ganado, campeona!!!`;
         attempsEl.innerHTML = numberAttemps += 1;
-        console.log('win');
-    } 
-    else if (randomNumber < numberEl.value) {
+        console.log('¡¡¡Has ganado, campeona!!!');
+    } else if (numberEl.value > randomNumber) {
         hintEl.innerHTML = 'Demasiado alto.';
-        console.log('not win');
+        console.log('Demasiado alto.');
         attempsEl.innerHTML = numberAttemps += 1;
-    }
-    else if (randomNumber > numberEl.value) {
+    } else if (numberEl.value < randomNumber) {
         hintEl.innerHTML = 'Demasiado bajo.';
-        console.log('not win');
+        console.log('Demasiado bajo.');
         attempsEl.innerHTML = numberAttemps += 1;
     }
 }
+
+
+
 
 buttonEl.addEventListener('click', updateElements);
