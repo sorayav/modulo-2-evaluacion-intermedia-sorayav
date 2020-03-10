@@ -18,16 +18,15 @@ const randomNumber = getRandomNumber(100);
 console.log(randomNumber);
 
 function updateElements() {
-    // event.preventDefault()
-    if (numberEl.value === randomNumber) {
+    if (parseInt(numberEl.value) === randomNumber) {
         hintEl.innerHTML = `¡¡¡Has ganado, campeona!!!`;
         attempsEl.innerHTML = numberAttemps += 1;
         console.log('¡¡¡Has ganado, campeona!!!');
-    } else if (numberEl.value > randomNumber) {
+    } else if (parseInt(numberEl.value) > randomNumber) {
         hintEl.innerHTML = 'Demasiado alto.';
         console.log('Demasiado alto.');
         attempsEl.innerHTML = numberAttemps += 1;
-    } else if (numberEl.value < randomNumber) {
+    } else if(parseInt(numberEl.value) < randomNumber) {
         hintEl.innerHTML = 'Demasiado bajo.';
         console.log('Demasiado bajo.');
         attempsEl.innerHTML = numberAttemps += 1;
