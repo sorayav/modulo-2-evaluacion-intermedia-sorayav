@@ -21,7 +21,6 @@ console.log(randomNumber);
 
 attempsEl.innerHTML = numberAttemps;
 
-// Es preferible empezar por el error.
 function updateElements() {
     const inputNumber = parseInt(numberEl.value);
     if (inputNumber === randomNumber) {
@@ -44,18 +43,8 @@ function updateElements() {
 }
 buttonEl.addEventListener('click', updateElements);
 
-// Reset button
+// Reset form
 const btnReset = document.querySelector('.reset');
-
-// const formReset = () => {document.querySelector('#form').reset()};
-
-function formReset() {
-    document.querySelector('#form').reset()
-} 
-
-function resetHandler () {
-    formReset();
-    updateElements();
-} 
-
+const formReset = () => {document.querySelector('#form').reset()};
+const resetHandler = () => {formReset(); updateElements();}
 btnReset.addEventListener('click', resetHandler);
