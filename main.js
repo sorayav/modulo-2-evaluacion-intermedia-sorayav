@@ -19,20 +19,21 @@ function getRandomNumber(max) {
 const randomNumber = getRandomNumber(100);
 console.log(randomNumber);
 
-attempsEl.innerHTML = numberAttemps
+attempsEl.innerHTML = numberAttemps;
 
 // Es preferible empezar por el error.
 function updateElements() {
-    if (parseInt(numberEl.value) === randomNumber) {
+    const inputNumber = parseInt(numberEl.value);
+    if (inputNumber === randomNumber) {
         hintEl.innerHTML = `¡¡¡Has ganado, campeona!!!`;
         attempsEl.innerHTML = numberAttemps += 1;
         console.log('¡¡¡Has ganado, campeona!!!');
         btnReset.classList.remove('hidden');
-    } else if (parseInt(numberEl.value) > randomNumber && parseInt(numberEl.value) <= maxValue) {
+    } else if (inputNumber > randomNumber && inputNumber <= maxValue) {
         hintEl.innerHTML = 'Demasiado alto.';
         console.log('Demasiado alto.');
         attempsEl.innerHTML = numberAttemps += 1;
-    } else if(parseInt(numberEl.value) < randomNumber && parseInt(numberEl.value) > minValue) {
+    } else if(inputNumber < randomNumber && inputNumber > minValue) {
         hintEl.innerHTML = 'Demasiado bajo.';
         console.log('Demasiado bajo.');
         attempsEl.innerHTML = numberAttemps += 1;
