@@ -9,6 +9,9 @@ const attempsEl = document.querySelector('.attemps-number');
 
 let numberAttemps = 0;
 
+let maxValue = 100;
+let minValue = 0;
+
 function getRandomNumber(max) {
     return Math.ceil(Math.random() * max);
 }
@@ -16,16 +19,20 @@ function getRandomNumber(max) {
 const randomNumber = getRandomNumber(100);
 console.log(randomNumber);
 
+attempsEl.innerHTML = numberAttemps
+
+// Es preferible empezar por el error.
 function updateElements() {
     if (parseInt(numberEl.value) === randomNumber) {
         hintEl.innerHTML = `¡¡¡Has ganado, campeona!!!`;
         attempsEl.innerHTML = numberAttemps += 1;
         console.log('¡¡¡Has ganado, campeona!!!');
-    } else if (parseInt(numberEl.value) > randomNumber && parseInt(numberEl.value) < 101) {
+        btnReset.classList.remove('hidden');
+    } else if (parseInt(numberEl.value) > randomNumber && parseInt(numberEl.value) <= maxValue) {
         hintEl.innerHTML = 'Demasiado alto.';
         console.log('Demasiado alto.');
         attempsEl.innerHTML = numberAttemps += 1;
-    } else if(parseInt(numberEl.value) < randomNumber) {
+    } else if(parseInt(numberEl.value) < randomNumber && parseInt(numberEl.value) > minValue) {
         hintEl.innerHTML = 'Demasiado bajo.';
         console.log('Demasiado bajo.');
         attempsEl.innerHTML = numberAttemps += 1;
@@ -34,5 +41,20 @@ function updateElements() {
         console.log('El número debe estar entre 1 y 100.');
     }
 }
-
 buttonEl.addEventListener('click', updateElements);
+
+// Reset button
+const btnReset = document.querySelector('.reset');
+
+// const formReset = () => {document.querySelector('#form').reset()};
+
+function formReset() {
+    document.querySelector('#form').reset()
+} 
+
+function resetHandler () {
+    formReset();
+    updateElements();
+} 
+
+btnReset.addEventListener('click', resetHandler);

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Evaluación intermedia</title>
+        <title>Evaluación intermedia 2</title>
 
       <link rel="stylesheet" href="styles.css">
 
@@ -11,10 +11,11 @@
     <body>
       <main class="main">
       <h1>Adivina el número</h1>
-      <form action="" method="POST">
+      <form action="" method="" id="form">
         <label for="guess-number">Introduce aquí tu número:</label>
-        <input type="number" maxlength="100" name="guess-number" id="guess-number">
-        <button class="button-try" id="button-try" type="button">Prueba</button>
+        <input type="number" name="guess-number" id="guess-number" placeholder="Entre 1 y 100">
+        <div class="buttons"><button class="button-try" id="button-try" type="button">Prueba</button>  <button class="reset hidden">¡Juega otra vez!</button></div>
+
       </form>
         <p class="hint">Pista: Escribe el número y dale a "prueba".</p>
         <p class="attemps">Número de intentos: <span class="attemps-number">0</span></p>
